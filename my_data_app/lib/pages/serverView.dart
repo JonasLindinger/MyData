@@ -63,6 +63,9 @@ class _ServerViewState extends State<ServerView> {
           ),
         ),
       ),
+      body: Container(
+
+      ),
     );
   }
 
@@ -76,7 +79,7 @@ class _ServerViewState extends State<ServerView> {
         state = ServerState.online;
       });
     } else {
-      print('Request failed with status: ${response.statusCode}.');
+      print("Request failed with status: " + response.statusCode.toString() + ".");
     }
   }
 }
