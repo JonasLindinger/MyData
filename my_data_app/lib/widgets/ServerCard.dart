@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_data_app/pages/serverView.dart';
 import 'package:my_data_app/utils/CustomPrefs.dart';
 
 class ServerCard extends StatefulWidget {
@@ -63,7 +64,26 @@ class _ServerCardState extends State<ServerCard> {
           subtitle: Text(url),
           trailing: Icon(Icons.arrow_forward),
           onTap: () {
-            // Optional: do something on tap
+            // Open Server view
+            Navigator.push(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) => ServerView(serverInfo: serverInfo!),
+                transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                  const begin = Offset(1.0, 0.0); // start from right
+                  const end = Offset.zero;        // end at 0,0
+                  const curve = Curves.ease;
+
+                  final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                  return SlideTransition(
+                    position: animation.drive(tween),
+                    child: child,
+                  );
+                },
+              ),
+            );
           },
         ),
       ),
