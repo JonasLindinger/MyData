@@ -48,7 +48,7 @@ class _ServerCardState extends State<ServerCard> {
         // Optional: show a snack bar
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Center(
-            child: Text('${widget.serverName} deleted'),
+            child: Text(widget.serverName + " deleted"),
           )),
         );
       },
