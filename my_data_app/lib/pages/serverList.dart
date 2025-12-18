@@ -17,6 +17,7 @@ class _ServerListPageState extends State<ServerListPage> {
   void initState() {
     super.initState();
     loadServerList();
+    // clearPrefs();
   }
 
   void clearPrefs() async {
@@ -174,6 +175,11 @@ class _ServerListPageState extends State<ServerListPage> {
     // Validate
     if (name.isEmpty || url.isEmpty || accessKey.isEmpty) {
       return;
+    }
+
+    // Check for duplicates
+    if (server.contains(name)) {
+      return; // Deny duplicates.
     }
 
     // Save server name
