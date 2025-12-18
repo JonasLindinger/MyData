@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_data_app/pages/serverList.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      // home:
+      home: ServerListPage(),
     );
   }
 }
