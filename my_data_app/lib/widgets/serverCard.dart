@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_data_app/pages/serverView.dart';
-import 'package:my_data_app/utils/CustomPrefs.dart';
+import 'package:my_data_app/utils/customPrefs.dart';
 
 class ServerCard extends StatefulWidget {
   final String serverName;
-  final Function(String)? onDelete; // add this to ServerCard
+  final Function(String)? onDelete;
 
   const ServerCard({
     super.key,

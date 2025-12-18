@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_data_app/widgets/accessCard.dart';
 
 class ServerView extends StatefulWidget {
   final Map<String, dynamic> serverInfo;
@@ -64,7 +65,18 @@ class _ServerViewState extends State<ServerView> {
         ),
       ),
       body: Container(
-
+        child: Column(
+          children: [
+            AccessCard(
+              accessName: "Global",
+              serverInfo: widget.serverInfo,
+            ),
+            AccessCard(
+              accessName: "MyData",
+              serverInfo: widget.serverInfo,
+            ),
+          ],
+        ),
       ),
     );
   }

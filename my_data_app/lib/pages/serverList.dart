@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_data_app/utils/CustomPrefs.dart';
-import 'package:my_data_app/widgets/ServerCard.dart';
+import 'package:my_data_app/utils/customPrefs.dart';
+import 'package:my_data_app/widgets/serverCard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ServerListPage extends StatefulWidget {
