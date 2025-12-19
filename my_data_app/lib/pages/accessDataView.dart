@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AccessDataView extends StatefulWidget {
+  final String accessName;
   final Map<String, dynamic> serverInfo;
 
   const AccessDataView({
     super.key,
+    required this.accessName,
     required this.serverInfo,
   });
 
@@ -33,7 +35,7 @@ class _AccessDataViewState extends State<AccessDataView> {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Todo: Title"),
+                Text(widget.serverInfo["name"] + " - " + widget.accessName),
               ],
             )
           ),

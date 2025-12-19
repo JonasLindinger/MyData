@@ -43,39 +43,31 @@ class _ServerViewState extends State<ServerView> {
             ],
           ),
           child: AppBar(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(widget.serverInfo["name"]),
-                Text(
-                  state.name,
-                  style: TextStyle(
-                    fontSize: 18,
-                    color:
-                      state == ServerState.offline
-                        ? Colors.red :
-                      state == ServerState.online
-                        ? Colors.green
-                        : Colors.grey,
-                    ),
-                  ),
-                ],
-              )
+            title: Text(widget.serverInfo["name"]),
           ),
         ),
       ),
       body: Container(
-        child: Column(
-          children: [
-            AccessCard(
-              accessName: "Global",
-              serverInfo: widget.serverInfo,
+        child: state == ServerState.online ?
+          Column(
+            children: [
+              AccessCard(
+                accessName: "Global",
+                serverInfo: widget.serverInfo,
+              ),
+              AccessCard(
+                accessName: "MyData",
+                serverInfo: widget.serverInfo,
+              ),
+            ],
+          )
+        : SizedBox(
+          height: 60,
+          child: Center(
+            child: Text(
+              "Server is " + state.name,
             ),
-            AccessCard(
-              accessName: "MyData",
-              serverInfo: widget.serverInfo,
-            ),
-          ],
+          ),
         ),
       ),
     );

@@ -33,7 +33,7 @@ class _AccessCardState extends State<AccessCard> {
           Navigator.push(
             context,
             PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => AccessDataView(serverInfo: widget.serverInfo),
+              pageBuilder: (context, animation, secondaryAnimation) => AccessDataView(accessName: widget.accessName, serverInfo: widget.serverInfo),
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
                 const begin = Offset(1.0, 0.0); // start from right
                 const end = Offset.zero;        // end at 0,0
